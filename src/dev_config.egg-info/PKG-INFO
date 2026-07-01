@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: dev-config
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.14
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: jinja2>=3.1.6
+Requires-Dist: pyyaml>=6.0.3
+Dynamic: license-file
+
+# dev-infra-core
+Shared development standards and repository bootstrap templates used across all projects.

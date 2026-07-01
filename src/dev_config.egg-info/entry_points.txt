@@ -1,0 +1,2 @@
+[console_scripts]
+devcfg = dev_config.cli:main

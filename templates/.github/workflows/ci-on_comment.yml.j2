@@ -1,0 +1,14 @@
+name: {{ workflow_name | default('CI on Comment') }}
+
+on:
+  pull_request_review_comment:
+    types: [created]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  forward:
+    uses: {{ org_or_user | default('James-D-Rudd') }}/{{ repo_name | default('ci-workflows') }}/.github/workflows/review-router.yml@{{ version | default('v1') }}
+    with:
+      {% raw %}event_name: ${{ github.event_name }}
+      payload: ${{ toJson(github.event) }}{% endraw %}

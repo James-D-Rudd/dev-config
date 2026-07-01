@@ -1,0 +1,9 @@
+version: {{ version | default(2) }}
+
+updates:
+  - package-ecosystem: "{{ package_ecosystem | default('github-actions') }}"
+    directory: "{{ directory | default('/') }}"
+    schedule:
+      interval: "{{ schedule_interval | default('weekly') }}"
+    commit-message:
+      include: "{{ commit_message_include | default('scope') }}"

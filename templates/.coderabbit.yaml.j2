@@ -1,0 +1,22 @@
+knowledge_base:
+  code_guidelines:
+    enabled: {{ knowledge_base_enabled | default(true) | tojson }}
+    filePatterns:
+      {%- for pattern in knowledge_base_patterns | default(['~/.aider/skills/skill_docs.md']) %}
+      - "{{ pattern }}"
+      {%- endfor %}
+
+reviews:
+  profile: "{{ review_profile | default('assertive') }}"
+  request_changes_workflow: {{ request_changes_workflow | default(false) | tojson }}
+  high_level_summary: {{ high_level_summary | default(true) | tojson }}
+  path_filters:
+    {%- for filter in path_filters | default(['!dist/**', '!node_modules/**', 'src/**']) %}
+    - "{{ filter }}"
+    {%- endfor %}
+  auto_review_all_branches: {{ auto_review_all_branches | default(false) | tojson }}
+  instructions: |
+    {{ review_instructions | default('When reviewing docstrings, strictly adhere to the guidelines, voice,\nand formatting rules outlined in skills_docs.md. Do not flag patterns\nthat are permitted by that document.') | indent(4) }}
+
+chat:
+  enabled: {{ chat_enabled | default(true) | tojson }}

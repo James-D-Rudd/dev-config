@@ -1,0 +1,13 @@
+name: {{ workflow_name | default('CI') }}
+
+on:
+{% for trigger in triggers | default(['push', 'pull_request']) %}
+  {{ trigger }}:
+{% endfor %}
+
+jobs:
+{% for workflow_tool in workflow_tools | default(['sonar', 'snyk']) %}
+  {{ workflow_tool }}:
+    uses: {{ workflow_lib_repo | default('James-D-Rudd/ci-workflows') }}/.github/workflows/{{ workflow_tool }}.yml@{{ workflow_lib_version | default('v1') }}
+{% endfor %}
+
