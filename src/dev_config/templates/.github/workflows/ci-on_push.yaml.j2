@@ -8,6 +8,6 @@ on:
 jobs:
 {% for workflow_tool in workflow_tools | default(['sonar', 'snyk']) %}
   {{ workflow_tool }}:
-    uses: {{ workflow_lib_repo | default('James-D-Rudd/ci-workflows') }}/.github/workflows/{{ workflow_tool }}.yml@{{ workflow_lib_version | default('v1') }}
+    uses: {{ workflow_lib_repo | default('James-D-Rudd/ci-workflows') }}/.github/workflows/{{ workflow_tool }}.yaml@{{ workflow_lib_version | default('v1') }}
 {% endfor %}
 

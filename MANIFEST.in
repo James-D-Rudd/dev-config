@@ -1,0 +1,5 @@
+graft src/dev_config/templates
+
+global-exclude __pycache__
+global-exclude *.py[cod]
+

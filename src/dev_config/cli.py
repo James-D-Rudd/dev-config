@@ -17,7 +17,7 @@ def main():
         config = load_config(f"{args.path}/.devcfg.yaml")
         templates_to_render = load_config(f"{args.path}/.dev_templates_list.yaml")
 
-        base_dir = Path(__file__).resolve().parent.parent.parent
+        base_dir = Path(__file__).resolve().parent
         template_dir = base_dir / "templates"
 
         render_templates(
