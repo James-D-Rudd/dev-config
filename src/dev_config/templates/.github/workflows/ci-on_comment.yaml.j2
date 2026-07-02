@@ -12,3 +12,4 @@ jobs:
     with:
       {% raw %}event_name: ${{ github.event_name }}
       payload: ${{ toJson(github.event) }}{% endraw %}
+
