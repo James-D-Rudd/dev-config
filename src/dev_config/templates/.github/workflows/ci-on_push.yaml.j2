@@ -10,4 +10,3 @@ jobs:
   {{ workflow_tool }}:
     uses: {{ workflow_lib_repo | default('James-D-Rudd/ci-workflows') }}/.github/workflows/{{ workflow_tool }}.yaml@{{ workflow_lib_version | default('v1') }}
 {% endfor %}
-
