@@ -6,7 +6,8 @@ from jinja2 import Environment, FileSystemLoader
 def render_templates(config, template_dir, output_dir, templates):
     env = Environment(loader=FileSystemLoader(template_dir),
         trim_blocks=True,
-        lstrip_blocks=True
+        lstrip_blocks=True,
+        keep_trailing_newline=True,
     )
 
     for tname in templates:
@@ -17,5 +18,5 @@ def render_templates(config, template_dir, output_dir, templates):
         out_path = Path(output_dir) / out_name
         out_path.parent.mkdir(parents=True, exist_ok=True)
         with open(out_path, "w") as f:
-            f.write(rendered + '\n')
+            f.write(rendered)
 
