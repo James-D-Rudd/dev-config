@@ -10,5 +10,7 @@ jobs:
   forward:
     uses: {{ org_or_user | default('James-D-Rudd') }}/{{ repo_name | default('ci-workflows') }}/.github/workflows/review-router.yaml@{{ version | default('v1') }}
     with:
-      {% raw %}event_name: ${{ github.event_name }}
-      payload: ${{ toJson(github.event) }}{% endraw %}
+    {% raw %}
+      event_name: ${{ github.event_name }}
+      payload: ${{ toJson(github.event) }}
+    {% endraw %}
