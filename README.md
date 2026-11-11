@@ -8,7 +8,7 @@ Valid options for .devcfg.yaml:
 - repo_name:
 - repo_contents:
     - List of code types present in the repo. Current code supported is
-        - Python
+        - python
             
 
 .dev_templates_list.yaml works slightly differently. Every templated listed give you a different tool. Currently supported tools are:
@@ -18,3 +18,5 @@ Valid options for .devcfg.yaml:
 - ".coderabbit.yaml.j2"
 - ".github/dependabot.yaml.j2"
 - ".github/workflows/ci-on_push.yaml.j2"
+
+After those files have been configured, run devcfg.
