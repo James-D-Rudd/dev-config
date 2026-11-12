@@ -20,4 +20,6 @@ Valid options for .devcfg.yaml:
 - ".github/dependabot.yaml.j2"
 - ".github/workflows/ci-on_push.yaml.j2"
 
-After those files have been configured, run devcfg sync ..
+After those files have been configured, `run devcfg sync .`
+
+Note that running ./install.sh will also upgrade this package.
