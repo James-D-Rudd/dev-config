@@ -2,7 +2,7 @@ name: {{ workflow_name | default('CI') }}
 
 on:
 {% for trigger in triggers | default(['push', 'pull_request']) %}
-  -{{ trigger }}:
+  {{ trigger }}:
 {% endfor %}
 
 jobs:
